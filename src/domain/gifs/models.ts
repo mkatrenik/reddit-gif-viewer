@@ -18,7 +18,6 @@ class Gif {
     }
 
     private genUrl(url: string) {
-        // TODO set resourceType
         if (url.indexOf('gfycat') !== -1) {
             this.resourceType = 'video'
             const parsedUrl = parse(url)

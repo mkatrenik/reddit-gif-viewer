@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@types/es6-promise": "^0.0.32",
+    "@types/fetch-mock": "^5.0.5",
     "@types/isomorphic-fetch": "^0.0.31",
     "@types/jest": "^15.1.32",
     "@types/node": "^6.0.46",
@@ -13,6 +14,7 @@
     "class-validator": "^0.6.4",
     "css-loader": "^0.25.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "fetch-mock": "^5.5.0",
     "isomorphic-fetch": "^2.2.1",
     "jest": "^16.0.2",
     "mobx": "^2.6.0",
@@ -32,7 +34,6 @@
     "test": "jest"
   },
   "jest": {
-    "testEnvironment": "node",
     "moduleFileExtensions": [
       "ts",
       "tsx",
