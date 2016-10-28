@@ -1,0 +1,8 @@
+*~
+*.swp
+.DS_STORE
+/node_modules
+npm-debug.log
+npm-debug.log*
+.vscode
+dist
