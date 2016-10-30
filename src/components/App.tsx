@@ -22,7 +22,7 @@ export class App extends React.Component<{}, {}> {
         }
     };
 
-    render(): JSX.Element {
+    render() {
         return <div>
             <div className={styles.controlBar}>
                 <input type="text" onKeyPress={this.handleEnter}

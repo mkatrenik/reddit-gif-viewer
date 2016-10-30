@@ -1,14 +1,16 @@
 import * as React from 'react'
 import { observer } from 'mobx-react'
 import { TGifs } from '../domain/gifs/models'
+import cm from 'react-classname-module'
+
 const styles = require('./styles.css') as any;
 
 interface IProps { gifs: TGifs }
 
 @observer
-export default class GifsList extends React.Component<IProps, {}> {
+export class GifsList extends React.Component<IProps, {}> {
     render() {
-        return <ul className={styles.list}>
+        return <ul className="list">
             <li>asaa</li>
             {this.props.gifs.map(gif => {
                 return <li key={gif.id}>
@@ -25,3 +27,5 @@ export default class GifsList extends React.Component<IProps, {}> {
         </ul>;
     }
 }
+
+export default cm(GifsList, styles)

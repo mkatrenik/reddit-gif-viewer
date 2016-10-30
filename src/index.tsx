@@ -10,7 +10,6 @@ ReactDOM.render(
 );
 
 // Hot Module Replacement API
-
 const m: any = module as any;
 if (m.hot) {
   m.hot.accept();
