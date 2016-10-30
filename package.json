@@ -36,7 +36,7 @@
   },
   "scripts": {
     "test": "jest",
-    "start": "webpack-dev-server --hot --port 3000"
+    "start": "webpack-dev-server --hot --no-info --port 3000"
   },
   "jest": {
     "moduleFileExtensions": [
