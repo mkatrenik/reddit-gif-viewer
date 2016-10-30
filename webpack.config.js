@@ -23,6 +23,9 @@ module.exports = {
     devtool: "source-map",
 
     module: {
+        preLoaders: [
+            { test: /\.tsx?$/, loader: "tslint", include: path.resolve(__dirname, "src") },
+        ],
         loaders: [
             // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
             {
@@ -45,5 +48,10 @@ module.exports = {
         new webpack.NoErrorsPlugin(),
         new webpack.NamedModulesPlugin()
         // new ExtractTextPlugin('[hash].css')
-    ]
+    ],
+    tslint: {
+        // Rules are in tslint.json
+        emitErrors: true, // false = WARNING for webpack, true = ERROR for webpack
+        formattersDirectory: path.join('node_modules', 'tslint-loader', 'formatters')
+    },
 };

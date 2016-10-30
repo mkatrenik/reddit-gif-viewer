@@ -3,12 +3,10 @@ import { observer } from 'mobx-react'
 import { TGifs } from '../domain/gifs/models'
 const styles = require('./styles.css') as any;
 
-
-interface Props { gifs: TGifs }
-
+interface IProps { gifs: TGifs }
 
 @observer
-export default class GifsList extends React.Component<Props, {}> {
+export default class GifsList extends React.Component<IProps, {}> {
     render() {
         return <ul className={styles.list}>
             <li>asaa</li>

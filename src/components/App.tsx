@@ -1,9 +1,9 @@
-import * as React from "react";
+import * as React from 'react'
 import GifsList from './GifsList'
 import { fetchGifsAndStore } from '../domain/gifs/api'
 import { gifs } from '../domain/gifs/models'
 
-const styles = {
+const styles: any = {
     controlBar: '',
     input: '',
     button: ''
@@ -22,7 +22,7 @@ export class App extends React.Component<{}, {}> {
         }
     };
 
-    render() {
+    render(): JSX.Element {
         return <div>
             <div className={styles.controlBar}>
                 <input type="text" onKeyPress={this.handleEnter}

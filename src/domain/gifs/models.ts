@@ -1,8 +1,7 @@
-import { observable, computed } from 'mobx'
+import { observable } from 'mobx'
 import { parse } from 'url'
 import { IsUrl } from 'class-validator'
 import { IObservableArray } from 'mobx'
-
 
 class Gif {
     id: string

@@ -1,9 +1,9 @@
-import { fetchGifsAndStore, fetchGifs, SubredditSchema, url } from '../api'
+import { fetchGifsAndStore, fetchGifs, ISubredditSchema, url } from '../api'
 import { Gif, gifs } from '../models'
 import * as fetchMock from 'fetch-mock'
 
 
-const fooRes: SubredditSchema = {
+const fooRes: ISubredditSchema = {
     data: {
         children: [
             {
@@ -28,7 +28,7 @@ describe('fetchGifs()', () => {
     it('returns exception on invalid subreddit', async () => {
         fetchMock.get(url('foo'), {})
         try {
-            const data = await fetchGifs('fooooo') 
+            await fetchGifs('fooooo') 
         } catch (e) {
             expect(e).toBeInstanceOf(Error)
         }
