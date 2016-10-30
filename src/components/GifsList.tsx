@@ -1,20 +1,17 @@
 import * as React from 'react'
 import { observer } from 'mobx-react'
 import { TGifs } from '../domain/gifs/models'
-import { style } from 'typestyle'
+const styles = require('./styles.css') as any;
+
 
 interface Props { gifs: TGifs }
 
-namespace styles {
-    export const list = style({
-        border: '1px solid red'
-    })
-}
 
 @observer
 export default class GifsList extends React.Component<Props, {}> {
     render() {
-        return <div className={styles.list}>
+        return <ul className={styles.list}>
+            <li>asaa</li>
             {this.props.gifs.map(gif => {
                 return <li key={gif.id}>
                     {gif.resourceType === 'gif' &&
@@ -27,6 +24,6 @@ export default class GifsList extends React.Component<Props, {}> {
                     }
                 </li>
             })}
-        </div>;
+        </ul>;
     }
 }
