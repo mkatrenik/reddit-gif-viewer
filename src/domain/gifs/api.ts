@@ -3,7 +3,7 @@ import { TGifs, Gif } from './models'
 
 export interface ISubredditSchema {
     data: {
-        children: Array<{ data: { id: string, url: string } }>
+        children: Array<{ data: { id: string, title: string, url: string } }>
     }
 }
 
@@ -16,8 +16,8 @@ export async function fetchGifs(key: string) {
                                                 .then(res => res.json())        
         
     payload.data.children.forEach(child => {
-        const { id, url } = child.data
-        const gif = new Gif(id, url)
+        const { id, title, url } = child.data
+        const gif = new Gif({id, title, url})
         const errors = validateSync(gif)
         if (errors.length) {
             console.log(errors)

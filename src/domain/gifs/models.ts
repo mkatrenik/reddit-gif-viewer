@@ -5,15 +5,16 @@ import { IObservableArray } from 'mobx'
 
 class Gif {
     id: string
-
+    title: string
     resourceType: 'gif' | 'video'
 
     @IsUrl()
     url: string
 
-    constructor(id: string, url: string) {
-        this.id = id
-        this.genUrl(url)
+    constructor(args: {id: string, title: string, url: string}) {
+        this.title = args.title
+        this.id = args.id
+        this.genUrl(args.url)
     }
 
     private genUrl(url: string) {

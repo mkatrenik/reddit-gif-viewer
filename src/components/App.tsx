@@ -2,12 +2,8 @@ import * as React from 'react'
 import GifsList from './GifsList'
 import { fetchGifsAndStore } from '../domain/gifs/api'
 import { gifs } from '../domain/gifs/models'
-
-const styles: any = {
-    controlBar: '',
-    input: '',
-    button: ''
-}
+import cm from 'react-classname-module'
+const styles = require('./app.css') as any;
 
 export class App extends React.Component<{}, {}> {
     _input: HTMLInputElement;
@@ -24,14 +20,17 @@ export class App extends React.Component<{}, {}> {
 
     render() {
         return <div>
-            <div className={styles.controlBar}>
+            <h1>Gify.</h1>
+            <div className="controlBar">
                 <input type="text" onKeyPress={this.handleEnter}
                     defaultValue="gifs" ref={(node) => this._input = node}
-                    className={styles.input}
                     />
-                <button onClick={this.handleSubmit} className={styles.button}>Go</button>
+                <button onClick={this.handleSubmit}
+                    className="button">Go</button>
             </div>
             <GifsList gifs={gifs} />
         </div>
     }
 }
+
+export default cm(App, styles)

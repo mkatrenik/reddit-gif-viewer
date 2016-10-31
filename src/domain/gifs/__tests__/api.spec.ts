@@ -8,7 +8,7 @@ const fooRes: ISubredditSchema = {
         children: [
             {
                 data: {
-                    id: '1', url: 'foo.bar'
+                    id: '1', url: 'foo.bar', title: 'Foo Bar'
                 }
             }
         ]
